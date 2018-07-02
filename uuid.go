@@ -28,7 +28,7 @@ func (u uuid) String() string {
 func Generate() (string, error) {
 	id := uuid{}
 	if _, err := rand.Read(id[:]); err != nil {
-		return "", nil
+		return "", err
 	}
 
 	// https://tools.ietf.org/html/rfc4122#section-4.1.3
